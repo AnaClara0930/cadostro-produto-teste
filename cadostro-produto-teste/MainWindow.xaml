@@ -1,0 +1,37 @@
+﻿<Window x:Class="cadostro_produto_teste.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cadostro_produto_teste"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1200">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="44" Margin="100,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="30" FontWeight="Normal"><Run Language="pt-br" Text="Controle de Produtos"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="67,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontSize="20" FontWeight="Normal"><Run Language="pt-br" Text="Id:"/></TextBlock>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="41" Margin="67,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
+        <TextBlock HorizontalAlignment="Left" Height="27" Margin="67,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontSize="20" FontWeight="Normal"><Run Language="pt-br" Text="Nome:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="283,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontSize="20" FontWeight="Normal"><Run Language="pt-br" Text="Descrição"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="40" Margin="67,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="40" Margin="283,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="67,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontSize="20" FontWeight="Normal"><Run Language="pt-br" Text="Quantidade"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="283,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontSize="20" FontWeight="Normal"><Run Language="pt-br" Text="Fabricante"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtQuantidade" HorizontalAlignment="Left" Height="40" Margin="67,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <TextBox x:Name="txtFabricante" HorizontalAlignment="Left" Height="40" Margin="283,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Height="28" Margin="67,364,0,0" VerticalAlignment="Top" Width="100" FontSize="18" Click="NovoProduto"/>
+        <Button x:Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Left" Height="28" Margin="172,364,0,0" VerticalAlignment="Top" Width="100" FontSize="18" Click="AtualizarProduto"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Height="28" Margin="277,364,0,0" VerticalAlignment="Top" Width="100" FontSize="18" Click="ExcluirProduto"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Height="28" Margin="382,364,0,0" VerticalAlignment="Top" Width="100" FontSize="18" Click="LimparCampos"/>
+        <Button Content="Sair" HorizontalAlignment="Left" Height="28" Margin="1117,10,0,0" VerticalAlignment="Top" Width="73" FontSize="18"/>
+        <DataGrid x:Name="dvgProdutos" HorizontalAlignment="Left" Height="383" Margin="495,51,0,0" VerticalAlignment="Top" Width="705" AutoGenerateColumns="False" FontSize="20" MouseDoubleClick="PegarItemNoGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="id"/>
+                <DataGridTextColumn Binding="{Binding nome}" Header="Nome"/>
+                <DataGridTextColumn Binding="{Binding descricao}" Header="Quantidade"/>
+                <DataGridTextColumn Binding="{Binding quantidade}" Header="Descrição"/>
+                <DataGridTextColumn Binding="{Binding fabricante}" Header="Fabricante" CanUserReorder="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
